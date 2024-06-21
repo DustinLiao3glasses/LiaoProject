@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoleControl : MonoBehaviour
 {
-    // ´ú¸Õ
+    // æ¸¬è©¦
     int a = 0;
     // Start is called before the first frame update
     void Start()
