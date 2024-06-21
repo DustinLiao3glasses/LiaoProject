@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoleControl : MonoBehaviour
 {
-    // 測試 123 123
+    // 測試 123 456
     int a = 0;
     // Start is called before the first frame update
     void Start()
