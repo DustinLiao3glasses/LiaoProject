@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class RoleControl : MonoBehaviour
 {
-    // 測試 123 123
-    int a = 0;
-    // Start is called before the first frame update
+    private Rigidbody2D rb2d;
+    
+    [Header("數值調整")]
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private float jumpAmount = 10;
+    [SerializeField]
+    private float gravityScale = 10;
+    [SerializeField]
+    private float fallingGravityScale = 40;
     void Start()
     {
-        
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            rb2d.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
+        }
     }
 }
